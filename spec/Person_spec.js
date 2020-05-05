@@ -1,18 +1,21 @@
-const {Person} = require("../src/Person");
+const { Person } = require("../src/Person");
 
-let person = new Person('Kaleem', 20, 'male', ['Enjoying life', ' being active and fit', ' and learning everyday.'])
+let person = new Person('Ryan', 30, 'male', ['being a hardarse',' agile', ' ssd hard drives'])
 
-describe("information of Person", function(){
-    it("should give a name of Person", function(){
-        expect(person.name).toBe('Kaleem')
+describe("information of Person", function () {
+    it("should have a name called Ryan", function () {
+        expect(person.name).toBe('Ryan')
     })
-    it("should give the age of Person", function(){
-        expect(person.age).toBe(20)
+    it("should have an age of 30", function () {
+        expect(person.age).toEqual(30)
     })
-    it("should give the gender of Person", function(){
+    it("should be the gender type male", function () {
         expect(person.gender).toBe('male')
     })
-    it("should provide the interests of Person", function(){
-        expect(person.interests).toContain('Enjoying life', ' being active and fit', ' and learning everyday.')
+    it("should provide the interests of Person", function () {
+        expect(person.interests).toContain('being a hardarse','agile', 'ssd hard drives')
+    })
+    it("should say hello", function() {
+        expect(person.hello()).toBe("Hi my name is Ryan, i am 30 years old, my gender is male, my interests are being a hardarse, agile, ssd hard drives")
     })
 })
